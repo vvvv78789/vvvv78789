@@ -3,10 +3,54 @@
 <head>
   <meta charset="utf-8">
   <title>how to feed tiger</title>
+  <script>
+    
+      var Links={
+        setColor:function(color){
+            var alist=document.querySelectorAll('a');
+            var i=0;
+            while(i<alist.length){
+            alist[i].style.color=color;
+            i=i+1;
+          }
+        }
+      }
+  
+      var Body={
+        setBackgroundColor:function(color){
+          var target =document.querySelector('body');
+          target.style.backgroundColor = color;
+        },
+        setColor:function(color){
+          var target =document.querySelector('body');
+          target.style.color = color;
+        }
+      };
+  
+      function night_dayHandler(self){
+        
+        if(self.value === 'night'){
+          Body.setBackgroundColor('black');
+          Body.setColor('white');
+          self.value = 'day';
+  
+        Links.setColor(powderblue);
+      }
+      else{
+        Body.setBackgroundColor('white');
+        Body.setColor('black');
+        self.value = 'night';
+        
+        Links.setColor(black);
+      }
+      }
+    </script>
 </head>
 
 <body>
 <h1><a href="index.html">먹이주는방법</a></h1>
+
+<input id = "day_swith" type="button" value="night" onclick="night_dayHandler(this)">
   <ol>
     <li><a href="1.html">강아지</a></li>
     <li><a href="2.html">고양이</a></li>
